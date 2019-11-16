@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+
+server:
+  port: 8088
+
+
+
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+

@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-service
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27018
+      database: localhost
+
+logging.level.org.springframework.web: DEBUG
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
